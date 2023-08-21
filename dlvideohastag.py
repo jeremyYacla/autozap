@@ -7,13 +7,13 @@ HEADERS = {
 }
 
 # Liste des tags pour lesquels nous voulons télécharger les vidéos
-TAGS = ['memes', 'funny', 'animals', 'football','drole']  # ajoutez ou supprimez des tags selon vos besoins
+TAGS = ['memes', 'funny', 'animals', 'football','drole', 'pet', 'pets', 'animals']  # ajoutez ou supprimez des tags selon vos besoins
 
 SAVE_PATH = os.path.join(os.getcwd(), 'videozap')
 
 
 def get_top_videos_from_tag(tag):
-    url = f'https://api.imgur.com/3/gallery/t/{tag}/time/week'
+    url = f'https://api.imgur.com/3/gallery/t/{tag}/time/days'
     response = requests.get(url, headers=HEADERS)
     data = response.json()
 
